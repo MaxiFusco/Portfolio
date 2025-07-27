@@ -1,0 +1,26 @@
+.footer {
+  background-color: #000; // fondo negro moderno
+  color: #fff; // texto blanco
+  text-align: center;
+  padding: 1.5rem 1rem;
+  font-size: 0.95rem;
+  line-height: 1.6;
+
+  p {
+    margin: 0;
+    padding: 0;
+    max-width: 90%;
+    margin-inline: auto;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 0.85rem;
+    padding: 1rem 0.5rem;
+
+    p {
+      max-width: 100%;
+    }
+  }
+}
+
+
