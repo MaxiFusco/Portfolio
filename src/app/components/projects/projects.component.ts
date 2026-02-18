@@ -14,7 +14,7 @@ export class ProjectsComponent {
       title: 'Ruedas Compartidas',
       description: 'Ecosistema digital para la gestión logística de alquiler de vehículos. Implementa un motor de reservas robusto y gestión documental de activos. Desarrollado con Java (Spring Boot), React y MySQL.',
       link: 'https://github.com/MaxiFusco/RuedasCompartidas',
-      image: '/assets/ruedas.png'
+      image: './assets/ruedas.png'
     },
     {
       title: 'De Latinos (No Country)',
