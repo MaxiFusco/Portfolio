@@ -9,7 +9,14 @@ import { CommonModule } from '@angular/common';
   imports: [CommonModule]
 })
 export class ProjectsComponent {
+
   projects = [
+     {
+      title: 'Mye Software',
+      description: 'Sociedad que ofrece soluciones tecnologicas a medida para pequeñas empresas',
+      link: 'https://myesoftware.com.ar',
+      image: '/assets/mye.png'
+    },
     {
       title: 'Ruedas Compartidas',
       description: 'Ecosistema digital para la gestión logística de alquiler de vehículos. Implementa un motor de reservas robusto y gestión documental de activos. Desarrollado con Java (Spring Boot), React y MySQL.',
