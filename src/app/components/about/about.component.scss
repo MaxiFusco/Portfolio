@@ -1,61 +1,152 @@
+$bg-section: #0f172a; 
+$card-bg: #1e293b;
+$text-main: #f8fafc;
+$text-muted: #94a3b8;
+$accent: #38bdf8; 
+
 .about {
-  max-width: 800px;
-  margin: 4rem auto;
-  padding: 0 1.5rem;
-  text-align: center;
+  padding: 6rem 5%;
+  background-color: $bg-section; 
+  color: $text-muted;
 
-  h2 {
-    font-size: 2.5rem;
-    color: #222;
-    margin-bottom: 1.5rem;
+  .about-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 5rem; 
+
+    // Responsive: Apilar en tablets y móviles
+    @media (max-width: 900px) {
+      flex-direction: column;
+      text-align: center;
+      gap: 3rem;
+    }
   }
 
-  p {
-    font-size: 1.1rem;
-    line-height: 1.8;
-    color: #444;
-    margin-bottom: 1.5rem;
+  
+  .about-image-wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    .image-border {
+      padding: 5px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, $accent, transparent);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      transition: transform 0.4s ease;
+
+      &:hover {
+        transform: translateY(-5px);
+      }
+    }
+
+    .profile-pic {
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid $card-bg;
+      display: block;
+
+      @media (max-width: 768px) {
+        width: 180px;
+        height: 180px;
+      }
+    }
+
+    .location-badge {
+      margin-top: 1.5rem;
+      background-color: rgba($accent, 0.1);
+      color: $accent;
+      padding: 0.5rem 1.2rem;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      border: 1px solid rgba($accent, 0.2);
+    }
   }
 
-  @media (max-width: 768px) {
-    h2 {
-      font-size: 2rem;
+  
+  .about-content {
+    flex: 1; 
+
+    .section-title {
+      font-size: 2.5rem;
+      color: $text-main;
+      margin-bottom: 0.5rem;
+      position: relative;
+      display: inline-block;
+
+    
+      &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -5px;
+        width: 40px;
+        height: 3px;
+        background-color: $accent;
+        border-radius: 2px;
+      }
+
+      @media (max-width: 900px) {
+        &::after {
+          left: 50%;
+          transform: translateX(-50%);
+        }
+      }
+    }
+
+    .section-subtitle {
+      font-size: 1.2rem;
+      color: $text-main;
+      font-weight: 500;
+      margin: 1.5rem 0;
+      line-height: 1.4;
     }
 
     p {
-      font-size: 1rem;
+      font-size: 1.05rem;
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+      
+      strong {
+        color: $text-main;
+        font-weight: 600;
+      }
     }
-  }
 
-  @media (max-width: 480px) {
-    margin: 2rem auto;
+    .tech-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin-top: 2rem;
 
-    h2 {
-      font-size: 1.8rem;
+      @media (max-width: 900px) {
+        justify-content: center;
+      }
+
+      .tag {
+        background-color: $card-bg;
+        color: $text-main;
+        padding: 0.5rem 1rem;
+        border-radius: 6px;
+        font-size: 0.85rem;
+        font-weight: 500;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        transition: all 0.3s ease;
+        cursor: default;
+
+        &:hover {
+          background-color: rgba($accent, 0.1);
+          border-color: $accent;
+          color: $accent;
+          transform: translateY(-2px);
+        }
+      }
     }
-
-    p {
-      font-size: 0.95rem;
-    }
-  }
-}
-
-.profile-pic {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin: 0 auto 1rem;
-  display: block;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease;
-
-  &:hover {
-    transform: scale(1.05);
-  }
-
-  @media (max-width: 480px) {
-    width: 120px;
-    height: 120px;
   }
 }

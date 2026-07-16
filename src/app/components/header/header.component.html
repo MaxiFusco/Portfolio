@@ -1,19 +1,32 @@
 <header class="header">
   <nav class="nav">
-    <a routerLink="/" class="logo">Maximiliano Fusco</a>
+    <!-- Logo con contraste para darle un toque de marca personal -->
+    <a routerLink="/" class="logo">
+      Maximiliano<span class="accent">Fusco</span>
+    </a>
 
-    <button class="menu-toggle" (click)="menuOpen = !menuOpen" aria-label="Toggle menu">
+    <button class="menu-toggle" [class.active]="menuOpen" (click)="menuOpen = !menuOpen" aria-label="Toggle menu">
       <span class="bar"></span>
       <span class="bar"></span>
       <span class="bar"></span>
     </button>
 
     <ul class="nav-links" [class.open]="menuOpen">
-      <li><a routerLink="/about" routerLinkActive="active">Sobre mí</a></li>
-      <li><a routerLink="/projects" routerLinkActive="active">Proyectos</a></li>
-      <li><a routerLink="/contact" routerLinkActive="active">Contacto</a></li>
-      <li><a href="https://www.linkedin.com/in/maximiliano-adrian-fusco-5bb3a8226/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
-      <li><a href="https://github.com/MaxiFusco" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+      <li><a routerLink="/about" routerLinkActive="active" (click)="menuOpen = false">Sobre mí</a></li>
+      <li><a routerLink="/projects" routerLinkActive="active" (click)="menuOpen = false">Proyectos</a></li>
+      <li><a routerLink="/contact" routerLinkActive="active" (click)="menuOpen = false">Contacto</a></li>
+      
+      <li class="divider"></li>
+      <li>
+        <a href="https://www.linkedin.com/in/maximiliano-adrian-fusco-5bb3a8226/" target="_blank" rel="noopener noreferrer" class="social-btn">
+          LinkedIn
+        </a>
+      </li>
+      <li>
+        <a href="https://github.com/MaxiFusco" target="_blank" rel="noopener noreferrer" class="social-btn">
+          GitHub
+        </a>
+      </li>
     </ul>
   </nav>
 </header>
