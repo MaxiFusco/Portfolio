@@ -6,75 +6,30 @@
     </div>
 
     <div class="featured-projects">
-      <!-- Proyecto Destacado 1: Ruedas Compartidas -->
+      <!-- Proyecto Destacado Único: Red Laboral -->
       <article class="featured-card card">
         <div class="featured-content">
-          <div class="project-meta">Plataforma Logística</div>
-          <h3 class="project-title">Ruedas Compartidas</h3>
+          <div class="project-meta">Plataforma de Intermediación Laboral</div>
+          <h3 class="project-title">Red Laboral</h3>
           
           <div class="project-details">
             <div class="detail-block">
-              <h4>El Problema</h4>
-              <p>Necesidad de digitalizar y automatizar el ciclo logístico del alquiler de vehículos, incluyendo reservas y gestión documental.</p>
-            </div>
-            <div class="detail-block">
-              <h4>La Solución</h4>
-              <p>Un ecosistema digital con un motor de reservas robusto, panel administrativo y validación de usuarios.</p>
-            </div>
-            <div class="detail-block">
-              <h4>Mi Contribución</h4>
-              <p>Desarrollo backend y diseño de arquitectura base de datos relacional para soportar flujos concurrentes de alquileres.</p>
+              <p>Plataforma de intermediación laboral diseñada para conectar talento local con oportunidades de empresas, optimizando la gestión de perfiles y vacantes. Diseñada para resolver las necesidades reales de conexión laboral.</p>
             </div>
           </div>
           
           <div class="tech-stack">
-            <span>Spring Boot</span>
-            <span>React</span>
+            <span>PHP</span>
+            <span>JavaScript</span>
             <span>MySQL</span>
           </div>
           
           <div class="project-links">
-            <a href="https://github.com/MaxiFusco/RuedasCompartidas" target="_blank" class="btn-primary">Ver Código</a>
+            <a href="https://www.red-laboral.com.ar" target="_blank" rel="noopener noreferrer" class="btn-primary">Visitar Web</a>
           </div>
         </div>
         <div class="featured-visual">
-          <img src="assets/ruedas.png" alt="Ruedas Compartidas" class="project-img" />
-        </div>
-      </article>
-
-      <!-- Proyecto Destacado 2: GymFit -->
-      <article class="featured-card card reverse">
-        <div class="featured-content">
-          <div class="project-meta">SaaS Health & Fitness</div>
-          <h3 class="project-title">GymFit</h3>
-          
-          <div class="project-details">
-            <div class="detail-block">
-              <h4>El Problema</h4>
-              <p>Centros de salud y fitness sin herramientas integradas para administrar rutinas, nutrición y usuarios.</p>
-            </div>
-            <div class="detail-block">
-              <h4>La Solución</h4>
-              <p>Sistema integral SaaS para administración total del centro, desde el staff hasta los catálogos de productos y planes.</p>
-            </div>
-            <div class="detail-block">
-              <h4>Mi Contribución</h4>
-              <p>Modelado e implementación de APIs seguras y escalables para servir los datos a la plataforma web de los clientes.</p>
-            </div>
-          </div>
-          
-          <div class="tech-stack">
-            <span>React</span>
-            <span>Spring Boot</span>
-            <span>MySQL</span>
-          </div>
-          
-          <div class="project-links">
-            <a href="https://github.com/MaxiFusco/GymFit" target="_blank" class="btn-primary">Ver Código</a>
-          </div>
-        </div>
-        <div class="featured-visual">
-          <img src="assets/gymfit.png" alt="GymFit" class="project-img" />
+          <img src="assets/A-Labur-AR.png" alt="Red Laboral" class="project-img" loading="lazy" />
         </div>
       </article>
     </div>
@@ -86,12 +41,17 @@
     
     <div class="projects-grid">
       <article class="compact-card card" *ngFor="let p of otherProjects">
-        <h4>{{p.title}}</h4>
-        <p>{{p.description}}</p>
-        <div class="tech-stack small">
-          <span *ngFor="let t of p.tags">{{t}}</span>
+        <div class="compact-visual">
+          <img [src]="p.image" [alt]="p.title" loading="lazy" />
         </div>
-        <a [href]="p.link" target="_blank" class="link-arrow">Repositorio →</a>
+        <div class="compact-content">
+          <h4>{{p.title}}</h4>
+          <p>{{p.description}}</p>
+          <div class="tech-stack small">
+            <span *ngFor="let t of p.tags">{{t}}</span>
+          </div>
+          <a [href]="p.link" target="_blank" rel="noopener noreferrer" class="link-arrow">Ver Proyecto →</a>
+        </div>
       </article>
     </div>
 
