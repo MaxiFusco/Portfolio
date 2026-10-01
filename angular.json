@@ -29,21 +29,14 @@
               {
                 "glob": "**/*",
                 "input": "public"
-              }
+              },
+              "src/favicon.ico",
+              "src/assets"
             ],
             "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.scss"
             ],
-            "styles": [
-  "node_modules/bootstrap/dist/css/bootstrap.min.css",
-  "src/styles.scss"
-],
-"assets": [
-  "src/favicon.ico",
-  "src/assets"
-],
-
-
             "scripts": []
           },
           "configurations": {
