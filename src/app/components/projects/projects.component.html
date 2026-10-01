@@ -1,34 +1,99 @@
-<section class="projects" id="projects">
-  <div class="projects-header">
-    <h2 class="section-title">Mis Proyectos</h2>
-    <p class="subtitle">Arquitecturas robustas y soluciones escalables llevadas a la realidad.</p>
-  </div>
+<section class="projects section-padding fade-in" id="projects">
+  <div class="container">
+    <div class="projects-header">
+      <h2 class="section-title">Proyectos Destacados</h2>
+      <p class="section-subtitle">Sistemas construidos, arquitecturas implementadas y problemas resueltos en el mundo real.</p>
+    </div>
 
-  <div class="project-list">
-    <article class="project-card" *ngFor="let project of projects">
-      
-      <div class="img-container">
-        <img [src]="project.image" [alt]="project.title" class="project-img" />
-      </div>
-
-      <div class="project-content">
-        <h3>{{ project.title }}</h3>
-        <p>{{ project.description }}</p>
-        
-
-        <div class="tags">
-          <span class="tag" *ngFor="let tag of project.tags">{{ tag }}</span>
+    <div class="featured-projects">
+      <!-- Proyecto Destacado 1: Ruedas Compartidas -->
+      <article class="featured-card card">
+        <div class="featured-content">
+          <div class="project-meta">Plataforma Logística</div>
+          <h3 class="project-title">Ruedas Compartidas</h3>
+          
+          <div class="project-details">
+            <div class="detail-block">
+              <h4>El Problema</h4>
+              <p>Necesidad de digitalizar y automatizar el ciclo logístico del alquiler de vehículos, incluyendo reservas y gestión documental.</p>
+            </div>
+            <div class="detail-block">
+              <h4>La Solución</h4>
+              <p>Un ecosistema digital con un motor de reservas robusto, panel administrativo y validación de usuarios.</p>
+            </div>
+            <div class="detail-block">
+              <h4>Mi Contribución</h4>
+              <p>Desarrollo backend y diseño de arquitectura base de datos relacional para soportar flujos concurrentes de alquileres.</p>
+            </div>
+          </div>
+          
+          <div class="tech-stack">
+            <span>Spring Boot</span>
+            <span>React</span>
+            <span>MySQL</span>
+          </div>
+          
+          <div class="project-links">
+            <a href="https://github.com/MaxiFusco/RuedasCompartidas" target="_blank" class="btn-primary">Ver Código</a>
+          </div>
         </div>
-      </div>
+        <div class="featured-visual">
+          <img src="assets/ruedas.png" alt="Ruedas Compartidas" class="project-img" />
+        </div>
+      </article>
 
-      <div class="project-actions">
-        <a [href]="project.link" target="_blank" class="btn-primary">
-          {{ project.link.includes('github.com') ? 'Ver Código' : 'Visitar Web' }}
-        </a>
-      </div>
-      
-    </article>
+      <!-- Proyecto Destacado 2: GymFit -->
+      <article class="featured-card card reverse">
+        <div class="featured-content">
+          <div class="project-meta">SaaS Health & Fitness</div>
+          <h3 class="project-title">GymFit</h3>
+          
+          <div class="project-details">
+            <div class="detail-block">
+              <h4>El Problema</h4>
+              <p>Centros de salud y fitness sin herramientas integradas para administrar rutinas, nutrición y usuarios.</p>
+            </div>
+            <div class="detail-block">
+              <h4>La Solución</h4>
+              <p>Sistema integral SaaS para administración total del centro, desde el staff hasta los catálogos de productos y planes.</p>
+            </div>
+            <div class="detail-block">
+              <h4>Mi Contribución</h4>
+              <p>Modelado e implementación de APIs seguras y escalables para servir los datos a la plataforma web de los clientes.</p>
+            </div>
+          </div>
+          
+          <div class="tech-stack">
+            <span>React</span>
+            <span>Spring Boot</span>
+            <span>MySQL</span>
+          </div>
+          
+          <div class="project-links">
+            <a href="https://github.com/MaxiFusco/GymFit" target="_blank" class="btn-primary">Ver Código</a>
+          </div>
+        </div>
+        <div class="featured-visual">
+          <img src="assets/gymfit.png" alt="GymFit" class="project-img" />
+        </div>
+      </article>
+    </div>
+
+    <!-- Otros Proyectos en formato grid -->
+    <div class="other-projects-header">
+      <h3 class="subsection-title">Más Proyectos</h3>
+    </div>
+    
+    <div class="projects-grid">
+      <article class="compact-card card" *ngFor="let p of otherProjects">
+        <h4>{{p.title}}</h4>
+        <p>{{p.description}}</p>
+        <div class="tech-stack small">
+          <span *ngFor="let t of p.tags">{{t}}</span>
+        </div>
+        <a [href]="p.link" target="_blank" class="link-arrow">Repositorio →</a>
+      </article>
+    </div>
+
   </div>
 </section>
-
-

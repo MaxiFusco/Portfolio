@@ -1,0 +1,123 @@
+.mye {
+  padding: var(--section-padding);
+}
+
+.mye-card {
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  background: linear-gradient(145deg, var(--bg-secondary) 0%, rgba(10,10,11,1) 100%);
+  position: relative;
+  overflow: hidden;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(59, 130, 246, 0.05) 0%, rgba(0,0,0,0) 70%);
+    pointer-events: none;
+  }
+}
+
+.mye-header {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.mye-logo {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+}
+
+.mye-title-group {
+  .section-title {
+    margin-bottom: 0.25rem;
+    font-size: 2rem;
+  }
+}
+
+.company-origin {
+  color: var(--accent-secondary);
+  font-weight: 500;
+  
+  .dot {
+    margin: 0 0.5rem;
+    color: var(--text-tertiary);
+  }
+}
+
+.mye-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 4rem;
+}
+
+.mye-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  
+  p {
+    color: var(--text-secondary);
+    line-height: 1.7;
+    font-size: 1.05rem;
+    
+    strong {
+      color: var(--text-primary);
+    }
+  }
+}
+
+.mye-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+.stat-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  
+  .stat-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    background-color: var(--bg-tertiary);
+    border-radius: 12px;
+    color: var(--accent-primary);
+  }
+  
+  .stat-label {
+    font-weight: 500;
+    color: var(--text-primary);
+  }
+}
+
+@media (max-width: 768px) {
+  .mye-header {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .mye-content {
+    grid-template-columns: 1fr;
+  }
+  
+  .mye-stats {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}

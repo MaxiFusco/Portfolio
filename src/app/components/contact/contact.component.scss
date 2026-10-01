@@ -1,71 +1,77 @@
-$bg-section: #0f172a;
-$card-bg: #1e293b;
-$text-main: #f8fafc;
-$text-muted: #94a3b8;
-$accent: #38bdf8;
-
 .contact {
-  padding: 5rem 5%;
-  background-color: $bg-section;
+  padding: var(--section-padding);
+}
+
+.contact-card {
   text-align: center;
-  color: $text-main;
+  padding: 4rem 2rem;
+  background: linear-gradient(180deg, var(--bg-tertiary) 0%, var(--bg-secondary) 100%);
+}
 
-  .section-title {
-    font-size: 2.2rem;
-    margin-bottom: 1rem;
-  }
-
-  .subtitle {
-    color: $text-muted;
-    margin-bottom: 3rem;
-  }
-
-  .contact-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5rem;
-    max-width: 800px;
+.contact-header {
+  margin-bottom: 3rem;
+  
+  .section-subtitle {
     margin: 0 auto;
+    font-size: 1.1rem;
   }
+}
 
-  .contact-card {
-    background-color: $card-bg;
-    padding: 2rem;
-    border-radius: 12px;
-    text-decoration: none;
-    color: inherit;
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
+.contact-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
 
-    &:hover {
-      transform: translateY(-8px);
-      border-color: $accent;
-      background-color: rgba($accent, 0.05);
+.contact-method {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.5rem;
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  text-decoration: none;
+  transition: transform 0.2s, border-color 0.2s;
+  min-width: 250px;
+  
+  &:hover {
+    transform: translateY(-2px);
+    border-color: var(--accent-primary);
+    
+    .method-icon {
+      color: var(--accent-primary);
     }
+  }
+}
 
-    .icon-box {
-      font-size: 2rem;
-      background: rgba($accent, 0.1);
-      padding: 1rem;
-      border-radius: 50%;
-    }
+.method-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-secondary);
+  transition: color 0.2s;
+}
 
-    .info {
-      text-align: left;
-      
-      h3 {
-        margin: 0;
-        font-size: 1.1rem;
-        color: $accent;
-      }
-      p {
-        margin: 0.2rem 0 0 0;
-        font-size: 0.9rem;
-        color: $text-muted;
-      }
-    }
+.method-info {
+  text-align: left;
+  
+  h3 {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.2rem;
+  }
+  
+  span {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text-primary);
+  }
+}
+
+@media (max-width: 600px) {
+  .contact-method {
+    width: 100%;
   }
 }

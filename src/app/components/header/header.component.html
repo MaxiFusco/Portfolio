@@ -1,7 +1,6 @@
 <header class="header">
   <nav class="nav">
-    <!-- Logo con contraste para darle un toque de marca personal -->
-    <a routerLink="/" class="logo">
+    <a href="#inicio" class="logo">
       Maximiliano<span class="accent">Fusco</span>
     </a>
 
@@ -12,19 +11,15 @@
     </button>
 
     <ul class="nav-links" [class.open]="menuOpen">
-      <li><a routerLink="/about" routerLinkActive="active" (click)="menuOpen = false">Sobre mí</a></li>
-      <li><a routerLink="/projects" routerLinkActive="active" (click)="menuOpen = false">Proyectos</a></li>
-      <li><a routerLink="/contact" routerLinkActive="active" (click)="menuOpen = false">Contacto</a></li>
+      <li><a href="#about" (click)="menuOpen = false">Sobre mí</a></li>
+      <li><a href="#mye-software" (click)="menuOpen = false">Cofundador</a></li>
+      <li><a href="#projects" (click)="menuOpen = false">Proyectos</a></li>
+      <li><a href="#habilidades" (click)="menuOpen = false">Stack</a></li>
       
       <li class="divider"></li>
       <li>
-        <a href="https://www.linkedin.com/in/maximiliano-adrian-fusco-5bb3a8226/" target="_blank" rel="noopener noreferrer" class="social-btn">
-          LinkedIn
-        </a>
-      </li>
-      <li>
-        <a href="https://github.com/MaxiFusco" target="_blank" rel="noopener noreferrer" class="social-btn">
-          GitHub
+        <a href="#contact" class="btn-primary small" (click)="menuOpen = false">
+          Contactarme
         </a>
       </li>
     </ul>
