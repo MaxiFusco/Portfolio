@@ -2,10 +2,18 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-hero',
-  imports: [],
+  standalone: true,
   templateUrl: './hero.component.html',
-  styleUrl: './hero.component.scss'
+  styleUrls: ['./hero.component.scss']
 })
 export class HeroComponent {
-
+  scrollToSection(id: string): void {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  }
 }

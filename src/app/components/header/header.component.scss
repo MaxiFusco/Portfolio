@@ -20,10 +20,15 @@
 
 .logo {
   font-size: 1.25rem;
+  font-family: inherit;
   font-weight: 700;
   color: var(--text-primary);
   text-decoration: none;
   letter-spacing: -0.5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
   
   .accent {
     color: var(--accent-primary);
@@ -67,14 +72,22 @@
   
   .divider { display: none; }
   
-  a:not(.btn-primary) {
+  .nav-btn {
+    background: none;
+    border: none;
     color: var(--text-secondary);
-    text-decoration: none;
+    font-family: inherit;
     font-weight: 500;
     font-size: 0.9rem;
+    cursor: pointer;
+    padding: 0;
     transition: color 0.2s;
     
     &:hover { color: var(--text-primary); }
+  }
+  
+  .nav-btn-primary {
+    font-family: inherit;
   }
   
   .btn-primary.small {
@@ -101,6 +114,6 @@
     
     &.open { right: 0; }
     
-    a:not(.btn-primary) { font-size: 1.25rem; }
+    .nav-btn { font-size: 1.25rem; }
   }
 }

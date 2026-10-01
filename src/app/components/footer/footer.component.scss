@@ -20,9 +20,14 @@
 
 .logo {
   font-size: 1.25rem;
+  font-family: inherit;
   font-weight: 700;
   color: var(--text-primary);
   text-decoration: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
   
   .accent {
     color: var(--accent-primary);
@@ -33,8 +38,13 @@
   display: flex;
   gap: 1.5rem;
   
-  a {
+  .footer-btn {
     color: var(--text-secondary);
+    background: none;
+    border: none;
+    font-family: inherit;
+    cursor: pointer;
+    padding: 0;
     text-decoration: none;
     font-size: 0.9rem;
     transition: color 0.2s;

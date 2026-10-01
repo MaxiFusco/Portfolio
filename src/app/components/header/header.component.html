@@ -1,26 +1,26 @@
-﻿<header class="header">
+<header class="header">
   <nav class="nav">
-    <a href="#inicio" class="logo">
+    <button type="button" class="logo button-reset" (click)="scrollToSection('inicio')">
       Maximiliano<span class="accent">Fusco</span>
-    </a>
+    </button>
 
-    <button class="menu-toggle" [class.active]="menuOpen" (click)="menuOpen = !menuOpen" aria-label="Toggle menu">
+    <button type="button" class="menu-toggle" [class.active]="menuOpen" (click)="menuOpen = !menuOpen" aria-label="Toggle menu">
       <span class="bar"></span>
       <span class="bar"></span>
       <span class="bar"></span>
     </button>
 
     <ul class="nav-links" [class.open]="menuOpen">
-      <li><a href="#sobre-mi" (click)="menuOpen = false">Sobre mÃ­</a></li>
-      <li><a href="#cofundador" (click)="menuOpen = false">Cofundador</a></li>
-      <li><a href="#proyectos" (click)="menuOpen = false">Proyectos</a></li>
-      <li><a href="#stack" (click)="menuOpen = false">Stack</a></li>
+      <li><button type="button" class="nav-btn" (click)="scrollToSection('sobre-mi')">Sobre mí</button></li>
+      <li><button type="button" class="nav-btn" (click)="scrollToSection('cofundador')">Cofundador</button></li>
+      <li><button type="button" class="nav-btn" (click)="scrollToSection('proyectos')">Proyectos</button></li>
+      <li><button type="button" class="nav-btn" (click)="scrollToSection('stack')">Stack</button></li>
       
       <li class="divider"></li>
       <li>
-        <a href="#contacto" class="btn-primary small" (click)="menuOpen = false">
+        <button type="button" class="btn-primary small nav-btn-primary" (click)="scrollToSection('contacto')">
           Contactarme
-        </a>
+        </button>
       </li>
     </ul>
   </nav>

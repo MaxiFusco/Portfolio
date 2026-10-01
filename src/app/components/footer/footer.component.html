@@ -1,13 +1,13 @@
-﻿<footer class="footer">
+<footer class="footer">
   <div class="container footer-container">
     <div class="footer-top">
-      <a href="#inicio" class="logo">
+      <button type="button" class="logo" (click)="scrollToSection('inicio')">
         Maximiliano<span class="accent">Fusco</span>
-      </a>
+      </button>
       <div class="footer-links">
-        <a href="#sobre-mi">Sobre mÃ­</a>
-        <a href="#proyectos">Proyectos</a>
-        <a href="#contacto">Contacto</a>
+        <button type="button" class="footer-btn" (click)="scrollToSection('sobre-mi')">Sobre mí</button>
+        <button type="button" class="footer-btn" (click)="scrollToSection('proyectos')">Proyectos</button>
+        <button type="button" class="footer-btn" (click)="scrollToSection('contacto')">Contacto</button>
       </div>
     </div>
     <div class="footer-bottom">
