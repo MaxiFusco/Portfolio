@@ -1,43 +1,58 @@
 .hero {
   min-height: 100vh;
+  min-height: 100svh;
   display: flex;
   align-items: center;
-  padding: 8rem 5% 4rem;
+  padding: 7.5rem clamp(1rem, 5vw, 4rem) 4rem;
   position: relative;
-  overflow: hidden;
+  overflow: clip;
 }
 
 .hero-container {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(1.5rem, 4vw, 4rem);
   align-items: center;
+  width: 100%;
+  min-width: 0;
+}
+
+.hero-content,
+.hero-visual {
+  min-width: 0;
+  max-width: 100%;
 }
 
 .badge {
   display: inline-block;
+  max-width: 100%;
   padding: 0.35rem 0.8rem;
-  font-size: 0.85rem;
+  font-size: clamp(0.75rem, 2.5vw, 0.85rem);
   font-weight: 500;
   color: var(--accent-secondary);
   background-color: var(--accent-glow);
   border: 1px solid rgba(59, 130, 246, 0.3);
   border-radius: 9999px;
   margin-bottom: 1.5rem;
+  white-space: normal;
 }
 
 .hero-title {
-  font-size: 3.5rem;
+  max-width: 100%;
+  font-size: clamp(2rem, 4.2vw, 3.5rem);
   font-weight: 800;
   line-height: 1.1;
   margin-bottom: 1rem;
   letter-spacing: -0.03em;
+  overflow-wrap: anywhere;
+  hyphens: auto;
 
   .accent {
     color: var(--text-primary);
     position: relative;
     z-index: 1;
-    
+    overflow-wrap: anywhere;
+
     &::after {
       content: '';
       position: absolute;
@@ -53,10 +68,12 @@
 }
 
 .hero-subtitle {
-  font-size: 1.5rem;
+  max-width: 100%;
+  font-size: clamp(1.1rem, 2.4vw, 1.5rem);
   font-weight: 500;
   color: var(--text-secondary);
   margin-bottom: 1.5rem;
+  overflow-wrap: anywhere;
 
   .separator {
     color: var(--text-tertiary);
@@ -66,11 +83,13 @@
 }
 
 .hero-description {
-  font-size: 1.125rem;
-  color: var(--text-secondary);
+  width: 100%;
   max-width: 500px;
+  font-size: clamp(1rem, 2vw, 1.125rem);
+  color: var(--text-secondary);
   margin-bottom: 2.5rem;
   line-height: 1.7;
+  overflow-wrap: anywhere;
 
   strong {
     color: var(--text-primary);
@@ -79,7 +98,15 @@
 
 .hero-actions {
   display: flex;
+  flex-wrap: wrap;
   gap: 1rem;
+  max-width: 100%;
+
+  button {
+    min-width: 0;
+    max-width: 100%;
+    white-space: normal;
+  }
 }
 
 .hero-visual {
@@ -92,11 +119,12 @@
 
 .glow-orb {
   position: absolute;
-  width: 300px;
-  height: 300px;
+  width: min(300px, 80vw);
+  height: min(300px, 80vw);
   background: radial-gradient(circle, var(--accent-glow) 0%, rgba(10,10,11,0) 70%);
   filter: blur(40px);
   z-index: 0;
+  pointer-events: none;
 }
 
 .code-window {
@@ -105,6 +133,7 @@
   border-radius: 8px;
   width: 100%;
   max-width: 450px;
+  min-width: 0;
   position: relative;
   z-index: 1;
   box-shadow: 0 20px 40px rgba(0,0,0,0.4);
@@ -120,8 +149,9 @@
     .dot {
       width: 10px;
       height: 10px;
+      flex: 0 0 10px;
       border-radius: 50%;
-      
+
       &.red { background-color: #ff5f56; }
       &.yellow { background-color: #ffbd2e; }
       &.green { background-color: #27c93f; }
@@ -129,12 +159,14 @@
   }
 
   pre {
-    padding: 1.5rem;
+    padding: clamp(0.75rem, 3vw, 1.5rem);
     font-family: 'Fira Code', monospace;
-    font-size: 0.9rem;
+    font-size: clamp(0.68rem, 1.5vw, 0.9rem);
     line-height: 1.5;
     color: var(--text-secondary);
     margin: 0;
+    max-width: 100%;
+    overflow-x: auto;
 
     .keyword { color: #c678dd; }
     .variable { color: #e5c07b; }
@@ -144,17 +176,22 @@
 }
 
 @media (max-width: 992px) {
+  .hero {
+    padding-top: 7rem;
+  }
+
   .hero-container {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2rem;
     text-align: center;
   }
 
   .hero-title {
-    font-size: 2.75rem;
+    font-size: clamp(2rem, 6vw, 2.75rem);
   }
 
   .hero-description {
-    margin: 0 auto 2.5rem;
+    margin: 0 auto 2rem;
   }
 
   .hero-actions {
@@ -162,16 +199,71 @@
   }
 
   .hero-visual {
-    margin-top: 2rem;
+    margin-top: 0.5rem;
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
   .hero {
-    padding-top: 6rem;
+    min-height: auto;
+    padding: 6.5rem 1rem 2.5rem;
   }
-  
+
+  .hero-container {
+    gap: 1.75rem;
+  }
+
+  .badge {
+    margin-bottom: 1rem;
+  }
+
+  .hero-title {
+    font-size: clamp(1.85rem, 8vw, 2.5rem);
+    letter-spacing: -0.035em;
+  }
+
+  .hero-subtitle {
+    font-size: clamp(1rem, 4.5vw, 1.2rem);
+    line-height: 1.45;
+  }
+
+  .hero-subtitle .separator {
+    margin: 0 0.2rem;
+  }
+
+  .hero-description {
+    font-size: 1rem;
+    line-height: 1.65;
+    margin-bottom: 1.75rem;
+  }
+
   .hero-actions {
     flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    gap: 0.75rem;
+
+    button {
+      width: 100%;
+      padding: 0.85rem 1rem;
+    }
+  }
+
+  .hero-visual {
+    width: 100%;
+  }
+
+  .code-window pre {
+    text-align: left;
+  }
+}
+
+@media (max-width: 360px) {
+  .hero-title {
+    font-size: 1.75rem;
+  }
+
+  .badge {
+    font-size: 0.72rem;
   }
 }
